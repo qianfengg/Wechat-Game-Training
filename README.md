@@ -35,9 +35,9 @@ How to make a game? Let's learn it together!
         我只要学习后就会记录自己当天学了什么，不定期更新~
     
 4. 每天的记录，这里方便大家查看做了链接
-    * [day-001](./day-001/00-开始学习之旅.md)    
-    * [day-002](./day-002/00-cc.Node场景.md)    
-    * [day-003](./day-003/00-cc.Node事件响应.md)    
+    * [day-001: 开始学习之旅](./day-001/00-开始学习之旅.md)    
+    * [day-002: 场景](./day-002/00-cc.Node场景.md)    
+    * [day-003: 事件响应](./day-003/00-cc.Node事件响应.md)    
     
     
     
