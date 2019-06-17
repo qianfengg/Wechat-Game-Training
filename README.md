@@ -1,4 +1,4 @@
-# Wechat-Game-Trainng
+# Wechat-Game-Training
 How to make a game? Let's learn it together!
 
 1. 项目建立目的及自我介绍
