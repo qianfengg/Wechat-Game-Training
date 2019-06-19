@@ -132,6 +132,16 @@
     * 出几个题目
         1. 点击sub，把sub移动到世界坐标为900， 600的位置
         2. 获取当前节点的世界坐标
+        
+        ```
+            let target = this.node.parent.convertToNodeSpaceAR(cc.v2(900, 600));
+            this.node.setPosition(target);
+
+            let pos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
+            console.log(pos);
+        ```
+        
+        ![](./images/作业.jpg)
     
     
     
