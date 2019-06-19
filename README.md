@@ -38,6 +38,7 @@ How to make a game? Let's learn it together!
     * [day-001: 开始学习之旅](./day-001/00-开始学习之旅.md)    
     * [day-002: 场景](./day-002/00-cc.Node场景.md)    
     * [day-003: 事件响应](./day-003/00-cc.Node事件响应.md)    
+    * [day-004: 坐标空间](./day-004/00-cc.Node坐标空间.md)    
     
     
     
