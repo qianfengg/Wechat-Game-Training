@@ -9,7 +9,7 @@
 5. cc.rotateBy, cc.rotateTo
 6. cc.scaleBy, cc.scaleTo
 7. cc.fadeOut, cc.fadeIn，cc.fadeTo
-8. cc.callFunc
+8. cc.callFunc， cc.delayTime
 9. cc.sequence, cc.repeat, cc.repeatForever
 10. easing: 加上缓动特效，cc.easeXXXXX查看文档设置自己想要的缓动对象
 11. stopAction: 停止运行action
@@ -72,21 +72,34 @@
     let fadeTo = cc.fadeTo(1, 128);
     this.node.runAction(fadeTo);
     ```
-5. cc.callFunc
-    * 前面的这些方法其实都是要一段时间才能完成的ActionInterval
-    * 直接上代码
-    ```
-    let func = cc.callFunc(function(){
-        console.log("test");
-    }.bind(this));
-    console.log("begin");
-    this.node.runAction(func);
-    console.log("end");
-    ```
-    
-    ![](./images/执行顺序.jpg)
-    
-    * 他的机制并不是在begin和end中间执行
+5. cc.callFunc, cc.delayTime
+    1. cc.callFunc
+        * 前面的这些方法其实都是要一段时间才能完成的ActionInterval
+        * 直接上代码
+        ```
+        let func = cc.callFunc(function(){
+            console.log("test");
+        }.bind(this));
+        console.log("begin");
+        this.node.runAction(func);
+        console.log("end");
+        ```
+        
+        ![](./images/执行顺序.jpg)
+        
+        * 他的机制并不是在begin和end中间执行
+    2. cc.delayTime
+        * 模拟游戏爆装备
+        * 一开始item就存在，让他存在3s，然后模拟没人捡装备慢慢消失，然后删除
+        ```
+        let dt = cc.delayTime(3);
+        let fo = cc.fadeOut(0.5);
+        let cb = cc.callFunc(function(){
+        	this.node.removeFromParent();
+        }.bind(this));
+        let seq = cc.sequence([dt,fo,cb]);
+        this.node.runAction(seq);            
+        ```
 
 6. cc.sequence, cc.repeat, cc.repeatForever
     1. cc.sequence
@@ -110,5 +123,58 @@
             ```
         * 隐身即无敌，一边隐身一边行动，就问你牛逼不牛逼~    
     2. cc.repeat
+        * 可以设置重复的次数
+        ```
+        let s1 = cc.scaleTo(0.8, 1.1);
+        let s2 = cc.scaleTo(0.8, 0.7);
+        let seq = cc.sequence([s1, s2]);
+        let r = cc.repeat(seq, 3); //重复3次
+        this.node.runAction(r);
+        ```
+        
     3. cc.repeatForever
-    
+        * 一直重复就是无限次数，可以用这个新的API
+        ```
+        let s1 = cc.scaleTo(0.8, 1.1);
+        let s2 = cc.scaleTo(0.8, 0.7);
+        let seq = cc.sequence([s1, s2]);
+        let rf = cc.repeatForever(seq);
+        this.node.runAction(rf);
+        ```
+ 7. easing - 缓动特效  
+    * 有各种缓动的方式，请各位小伙伴自行查找API，这里只演示几种
+        ```
+        let move_to_action = cc.moveTo(2, 200, 200).easing(cc.easeBackOut());
+        this.node.runAction(move_to_action);
+        ```
+        ```
+        let rt = cc.rotateBy(3, 360).easing(cc.easeCubicActionInOut());
+        let rf = cc.repeatForever(rt);
+        this.node.runAction(rf);
+ 
+        ```
+ 8. stopAction / stopAllActions 
+    1. stopAction
+       * 传参action
+       * 停止你所传入的action行为
+    2. stopAllActions      
+       * 没有参数
+       * 停止该节点所有的action行为
+       
+    ```
+    this.node.on(cc.Node.EventType.TOUCH_START,function(t){
+        // this.node.stopAction(rf);
+        this.node.stopAllActions();
+    },this)
+    ```  
+ 9. 小练习
+    * 移动到100,0，然后删除自己
+    ```
+    let move_to = cc.moveTo(3, 100, 0);
+    let cb = cc.callFunc(function(){
+        this.node.removeFromParent();
+    }.bind(this))
+    let seq = cc.sequence([move_to,cb]);
+    this.node.runAction(seq);    
+    ```   
+     
