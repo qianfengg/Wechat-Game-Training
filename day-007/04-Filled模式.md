@@ -56,6 +56,81 @@
         
         * 游戏里运用场景，cd图标，转完一圈可以在使用
         
-    * 写代码实现下效果~    
+    * 写代码实现下效果~
+        * 新建脚本**seat.js** 然后挂载组件**seat_normal_bk**上
+            ```
+            cc.Class({
+                extends: cc.Component,
             
+                properties: {
+                    sprite: {
+                        default: null,
+                        type: cc.Sprite
+                    },
+                    action_time: 15
+                },
+            
+                // LIFE-CYCLE CALLBACKS:
+            
+                onLoad () {
+                    //获取组件的实例 有2种方式，1代码获取2编辑器绑定在properties写
+                    let childNode = this.node.getChildByName("seat_time_bar");
+                    this.sprite = childNode.getComponent(cc.Sprite);
+                    this.now_time = 0;
+                },
+            
+                start () {
+            
+                },
+            
+                update (dt) {
+                   this.now_time += dt;
+                   var percent = this.now_time / this.action_time;
+                   if(percent >= 1){
+                        percent = 1;
+                        this.now_time = 0;
+                   }
+                   this.sprite.fillRange = percent;
+                },
+            });
+            ```    
+        * 运行下看下效果吧~然后小伙伴们可以做下进度条减少(前面是进度条增加)
+        * 公布答案(这个游戏运用场景比方说是限时的任务) 
+            ```
+            cc.Class({
+                extends: cc.Component,
+            
+                properties: {
+                    sprite: {
+                        default: null,
+                        type: cc.Sprite
+                    },
+                    action_time: 2
+                },
+            
+                // LIFE-CYCLE CALLBACKS:
+            
+                onLoad () {
+                    //获取组件的实例 有2种方式，1代码获取2编辑器绑定在properties写
+                    let childNode = this.node.getChildByName("seat_time_bar");
+                    this.sprite = childNode.getComponent(cc.Sprite);
+                    this.now_time = this.action_time;
+                },
+            
+                start () {
+            
+                },
+            
+                update (dt) {
+                    this.now_time -= dt;
+                    let percent = this.now_time / this.action_time;
+                    if(percent <= 0){
+                        percent = 0;
+                        this.now_time = this.action_time;
+                    }
+                    this.sprite.fillRange = percent;
+                   
+                },
+            });
+            ```
        
