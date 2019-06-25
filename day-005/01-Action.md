@@ -1,5 +1,5 @@
 # Action
-> 概念及API
+> 知识大纲
 1. Action类是动作命令，我们创建Action，然后节点运行action就能执行Action的动作
 2. Action分为两类
     1. 瞬时完成的ActionInstant
