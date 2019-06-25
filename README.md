@@ -47,6 +47,7 @@ How to make a game? Let's learn it together!
     * [day-005: Action的使用](./day-005/00-Action使用.md)    
     * [day-006: Component的使用](./day-006/00-cc.Component使用.md)    
     * [day-007: Sprite的使用](./day-007/00-cc.Sprite使用.md)    
+    * [day-008: Button的使用](./day-008/00-cc.Button使用.md)    
     
     
     
