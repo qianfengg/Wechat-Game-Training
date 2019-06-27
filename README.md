@@ -48,6 +48,7 @@ How to make a game? Let's learn it together!
     * [day-006: Component的使用](day-006-Component/00-cc.Component使用.md)    
     * [day-007: Sprite的使用](day-007-Sprite/00-cc.Sprite使用.md)    
     * [day-008: Button的使用](day-008-Button/00-cc.Button使用.md)    
+    * [day-009: Label的使用](day-009-Label/00-cc.Label组件使用.md)    
     
     
     
