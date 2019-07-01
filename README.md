@@ -40,16 +40,17 @@ How to make a game? Let's learn it together!
     * 所以大家要多练习，遇到问题多看文档 
     
 5. 每天的记录，这里方便大家查看做了链接
-    * [day-001: 开始学习之旅](day-001-开始学习之旅/00-开始学习之旅.md)    
-    * [day-002: 场景](day-002-场景/00-cc.Node场景.md)    
-    * [day-003: 事件响应](day-003-事件/00-cc.Node事件响应.md)    
-    * [day-004: 坐标空间](day-004-坐标空间/00-cc.Node坐标空间.md)    
-    * [day-005: Action的使用](day-005-Action/00-Action使用.md)    
-    * [day-006: Component的使用](day-006-Component/00-cc.Component使用.md)    
-    * [day-007: Sprite的使用](day-007-Sprite/00-cc.Sprite使用.md)    
-    * [day-008: Button的使用](day-008-Button/00-cc.Button使用.md)    
-    * [day-009: Label的使用](day-009-Label/00-cc.Label组件使用.md)    
-    * [day-010: AudioSource的使用](day-010-AudioSource/00-AudioSource组件使用.md)    
+    * [day-001: 开始学习之旅](./day-001-开始学习之旅/00-开始学习之旅.md)    
+    * [day-002: 场景](./day-002-场景/00-cc.Node场景.md)    
+    * [day-003: 事件响应](./day-003-事件/00-cc.Node事件响应.md)    
+    * [day-004: 坐标空间](./day-004-坐标空间/00-cc.Node坐标空间.md)    
+    * [day-005: Action的使用](./day-005-Action/00-Action使用.md)    
+    * [day-006: Component的使用](./day-006-Component/00-cc.Component使用.md)    
+    * [day-007: Sprite的使用](./day-007-Sprite/00-cc.Sprite使用.md)    
+    * [day-008: Button的使用](./day-008-Button/00-cc.Button使用.md)    
+    * [day-009: Label的使用](./day-009-Label/00-cc.Label组件使用.md)    
+    * [day-010: AudioSource的使用](./day-010-AudioSource/00-AudioSource组件使用.md)    
+    * [day-011: 动画编辑器](./day-011-动画编辑器/00-动画编辑器使用.md)    
     
     
     
