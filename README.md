@@ -51,6 +51,7 @@ How to make a game? Let's learn it together!
     * [day-009: Label的使用](./day-009-Label/00-cc.Label组件使用.md)    
     * [day-010: AudioSource的使用](./day-010-AudioSource/00-AudioSource组件使用.md)    
     * [day-011: 动画编辑器](./day-011-动画编辑器/00-动画编辑器.md)    
+    * [day-012: 骨骼动画](./day-012-骨骼动画/00-骨骼动画组件使用.md)    
     
     
     
