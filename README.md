@@ -52,6 +52,7 @@ How to make a game? Let's learn it together!
     * [day-010: AudioSource的使用](./day-010-AudioSource/00-AudioSource组件使用.md)    
     * [day-011: 动画编辑器](./day-011-动画编辑器/00-动画编辑器.md)    
     * [day-012: 骨骼动画](./day-012-骨骼动画/00-骨骼动画组件使用.md)    
+    * [day-013: 预制体,Mask,Layout,ScrollView](./day-013-预制体,Mask,Layout,ScrollView/00-本章目录.md)    
     
     
     
