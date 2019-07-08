@@ -8,7 +8,7 @@
 
 > 练习
 1. 创建mask组件
-    1. 我们把之前的预制体item都删了，然后在Canvas下创建个空节点，取名为**viewport**
+    1. 我们把之前的预制体item都删了(可以使用active的属性隐藏)，然后在Canvas下创建个空节点，取名为**viewport**
     
         ![](./images/创建空节点viewport.jpg)
         
@@ -70,7 +70,7 @@
             
                 ![](res/avatar1.png)
             
-            * 把viewport下的item删除，然后在viewport下新增个单色精灵
+            * 把viewport下的item删除(可以使用active的属性隐藏)，然后在viewport下新增个单色精灵
             * 然后把素材图片**avatar1**拖拽至属性Sprite Frame下
             * 然后我们分别看下viewport属性的矩形，椭圆和图片
                 1. 矩形
