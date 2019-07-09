@@ -54,7 +54,7 @@ How to make a game? Let's learn it together!
     * [day-012: 骨骼动画](./day-012-骨骼动画/00-骨骼动画组件使用.md)    
     * [day-013: 预制体,Mask,Layout,ScrollView](./day-013-预制体,Mask,Layout,ScrollView/00-本章目录.md)    
     * [day-014: Loader的使用](./day-014-Loader/00-cc.Loader使用.md)    
-    * [day-015: widget与屏幕适配](day-015-Widget与屏幕适配/00-cc.widget与屏幕适配.md)    
+    * [day-015: widget与屏幕适配](day-015-Widget与屏幕适配/00-cc.Widget与屏幕适配.md)    
     
     
     
