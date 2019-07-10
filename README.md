@@ -57,6 +57,7 @@ How to make a game? Let's learn it together!
     * [day-015: Widget与屏幕适配](./day-015-Widget与屏幕适配/00-cc.Widget与屏幕适配.md)    
     * [day-016: 碰撞检测系统](./day-016-碰撞检测系统/00-本章目录.md)    
     * [day-017: 帧动画](./day-017-帧动画/00-本章目录.md)    
+    * [day-017: TexturePacker图集打包](./day-018-TexturePacker/00-TexturePacker图集打包.md)    
     
     
     
