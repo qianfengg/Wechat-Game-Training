@@ -113,7 +113,7 @@
             ```
         * 运行后发现，可以可以已经完成了我们的目标
         * 一个节点可以运行多个action 比如去目的地和隐藏一起做？
-            ```angular2html
+            ```
             let a1 = cc.moveTo(2, 100, 100);
             let a2 = cc.fadeOut(2);
            /* let seq = cc.sequence([a1, a2]);
