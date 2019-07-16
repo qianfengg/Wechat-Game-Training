@@ -65,6 +65,7 @@ How to make a game? Let's learn it together!
     * [day-022: 物理引擎官方案例与Camera组件](./day-022-物理引擎官方案例与Camera组件/00-本章目录.md)    
     * [day-023: 滚动列表动态加载数据](./day-023-滚动列表动态加载数据/00-本章目录.md)    
     * [day-024: 项目打包发布](./day-024-项目打包发布/00-本章目录.md)    
+    * [day-025: Director与资源加载策略](./day-025-Director与资源加载策略/00-本章目录.md)    
     
     
     
