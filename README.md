@@ -67,7 +67,7 @@ How to make a game? Let's learn it together!
     * [day-024: 项目打包发布](./day-024-项目打包发布/00-本章目录.md)    
     * [day-025: Director与资源加载策略](./day-025-Director与资源加载策略/00-本章目录.md)    
     * [day-026: 本地文件读写](./day-026-本地文件读写/00-本章目录.md)    
-    * [day-027: Websocket与socket.io](./day-027-Websocket与socket.io)    
+    * [day-027: Websocket与socket.io](./day-027-Websocket与socket.io/00-本章目录.md)    
     
     
     
