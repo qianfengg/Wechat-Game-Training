@@ -2,4 +2,4 @@
 
 * action中文的意思就是动作行为，行动！
 
-1. [Action](./01-Action.md)
+*  [开始学习Action吧](./01-Action.md)
