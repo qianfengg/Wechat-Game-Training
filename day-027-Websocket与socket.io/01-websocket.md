@@ -112,7 +112,7 @@
                 // end
             },
             ```    
-        2. 所以我们在建立连接后像服务端发送了Hello World
+        2. 所以我们在建立连接后向服务端发送了Hello World
         3. 在看我们后端**echo_server.js**，有这么几行代码,意思是接受到消息我们在回发这个消息
             ```
         	session.on("message", function(data) {
