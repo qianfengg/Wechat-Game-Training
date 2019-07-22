@@ -115,6 +115,17 @@
         ```
     3. 运行后看到图片的确上传成功~    
 
-6. download下载，下载一般用get                    
+6. download下载，下载一般用get
+    1. 需要指定数据类型arraybuffer
+    2. 具体代码是这样子的
+        ```
+        on_download_click(){
+            http.download("http://127.0.0.1:6080", "/download.jpg", null, function(err, data) {
+                let path = jsb.fileUtils.getWritablePath() + "/download.jpg";
+                jsb.fileUtils.writeDataToFile(data, path);
+            });
+        },
+        ```
+    3. 然后运行，就能把服务器上的图片下载到我们本地可读路径下了                        
 
     

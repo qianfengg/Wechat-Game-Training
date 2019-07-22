@@ -46,7 +46,7 @@ app.post("/upload", function (request, response) {
 });
 
 app.get("/download", function(request, response) {
-	var file_name = "./upload/" + request.query.name;
+	var file_name = "./www_root/" + request.query.name;
 
 	fs.readFile(file_name, function(err, data) {
 		if (err) {
