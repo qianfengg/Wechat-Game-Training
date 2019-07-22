@@ -16,12 +16,12 @@ app.all('*', function(req, res, next) {
 app.use(express.static(path.join(process.cwd(), "www_root")));
 app.listen(6080);
 
-app.get("/get", function (request, respones) {
+app.get("/get", function (request, response) {
 	console.log(request.query);
-	respones.send("HelloWorld!!!!");
+    response.send("HelloWorld!!!!");
 });
 
-app.post("/upload", function (request, respones) {
+app.post("/upload", function (request, response) {
 	request.now_len = 0;
 	
 	var file_name = "./upload/" + request.query.name;	
@@ -30,25 +30,29 @@ app.post("/upload", function (request, respones) {
 
 	request.on("data", function(data) {
 		request.now_len += data.length;
-		fs.write(fd, data, 0, data.length);
+		fs.write(fd, data, function(){
+
+		});
 	});
 
 	request.on("end", function() {
 		console.log("upload file " + request.query.name + " SUCCESS");
-		fs.close(fd);
+		fs.close(fd, function(){
 
-		respones.send("OK");
+		});
+
+        response.send("OK");
 	});
 });
 
-app.get("/download", function(request, respones) {
+app.get("/download", function(request, response) {
 	var file_name = "./upload/" + request.query.name;
 
 	fs.readFile(file_name, function(err, data) {
 		if (err) {
-			respones.send("file_err !");
+            response.send("file_err !");
 			return;
 		}
-		respones.send(data);
+        response.send(data);
 	});
 });
