@@ -63,16 +63,32 @@ module.exports = {
       
       Editor.Scene.callSceneScript('gen_navmesh', 'gen_nevmesh', function (err, map) {
           Editor.log("Gen nav map data...");
-          var path = Path.join(Editor.projectPath, 'assets', "maps");
+          var projectPath = Editor.projectPath;
+          if(!projectPath) { // 新版本走这里
+            projectPath = Editor.Project.path;
+          }
+
+
+          var path = Path.join(projectPath, 'assets', "maps");
+          if (!Fs.existsSync(path)) {
+            Fs.mkdirSync(path);
+          }  
+
+          if (!map) {
+            Editor.log("cannot find NAV_MAP node");
+            return;
+          }
           
-          Fs.mkdirsSync(path);
+
           var json_data = JSON.stringify(map);
-          json_data = "var " + "game_map_" + map.name + "=" + json_data + ";";
-          json_data = json_data + "\n" + "module.exports = " + "game_map_" + map.name;
+          json_data = "var " + "map_" + map.name + "=" + json_data + ";";
+          json_data = json_data + "\n" + "module.exports = " + "map_" + map.name;
+          
 
-          Fs.writeFileSync(Path.join(path, "game_map_" + map.name + ".js"), json_data);
-          Editor.log("Gen nav map Success !!!!!!!");
-
+          Fs.writeFileSync(Path.join(path, "map_" + map.name + ".js"), json_data);
+          Editor.assetdb.refresh('db://assets/maps', () => {
+            Editor.success('Gen nav map Success !!!!!!!');
+          });
       });
       
     },

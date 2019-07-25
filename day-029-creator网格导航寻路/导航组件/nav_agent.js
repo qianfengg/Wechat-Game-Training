@@ -35,11 +35,16 @@ cc.Class({
     },
 
     nav_to_map: function(dst_wpos) {
-        var src_wpos = this.node.convertToWorldSpaceAR(cc.p(0, 0));
+        if(this.game_map === null) {
+            return;
+        }
         
-        this.road_set = this.game_map.astar_search(src_wpos, dst_wpos);
-        console.log(this.road_set);
+        var src_wpos = this.node.convertToWorldSpaceAR(cc.v2(0, 0));
+        var src = this.game_map.node.convertToNodeSpaceAR(src_wpos);
+        var dst = this.game_map.node.convertToNodeSpaceAR(dst_wpos);
 
+        this.road_set = this.game_map.astar_search(src, dst);
+        
         if(!this.road_set || this.road_set.length <= 1) {
             this.state = State.Idle;
             return;
@@ -59,10 +64,11 @@ cc.Class({
             return;
         }
         var src = this.node.getPosition();
-        var dst = this.node.parent.convertToNodeSpaceAR(this.road_set[this.walk_next]);
+        var w_pos = this.game_map.node.convertToWorldSpaceAR(this.road_set[this.walk_next]);
+        var dst = this.node.parent.convertToNodeSpaceAR(w_pos);
 
-        var dir = cc.pSub(dst, src);
-        var len = cc.pLength(dir);
+        var dir = dst.sub(src);
+        var len = (dir.mag());
 
         this.vx = (dir.x / len) * this.speed;
         this.vy = (dir.y / len) * this.speed;

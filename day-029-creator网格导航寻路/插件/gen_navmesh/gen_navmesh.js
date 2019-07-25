@@ -1,6 +1,6 @@
 const Fs = require('fire-fs');
 
-var item_size = 32;
+var item_size = 16;
 var gen_tools = {
 	
 	find_map: function(root) {
@@ -86,13 +86,13 @@ var gen_tools = {
     'gen_nevmesh': function (event) {
         /*;
         Editor.log('children length : ' + canvas.children.length);
-        var pos = canvas.convertToWorldSpaceAR(cc.v2(0, 0));
+        var pos = canvas.convertToWorldSpaceAR(cc.p(0, 0));
         Editor.log(pos);
 		*/
 		var canvas = cc.find('Canvas')
 
         var map = gen_tools.find_map(canvas);
-
+        
         var game_map = null;
         if(map) {
         	game_map = gen_tools.gen_map_data(map);
