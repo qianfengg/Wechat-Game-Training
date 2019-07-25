@@ -197,12 +197,70 @@
                 ![](./images/多个item运行结果.jpg)  
                 
             3. 这边发现旋转貌似没用，咳咳
-            4. 然后我们测试下删除2个item，然后把另外最后个item隐藏下 
+            4. 然后我们测试下删除2个item，然后把另外最后个item隐藏下，发现效果是一致的
             
-                ![](./images/运行后结果一致因为根据map生成.jpg)   
+                ![](./images/运行后结果一致因为根据map生成.jpg) 
+                
+            5. 为了之后我们角色导航，我们地图还是简单做一下，做成这个样子吧，不要忘记重新gen下生成地图~  
+            
+                ![](./images/最终地图效果.png)     
     
-    6. 创建我们的角色        
-               
+    6. 创建我们的角色
+        1. 创建我们的player，创建一个单色精灵，然后修改属性
+            * 更改他的大小Size(16, 32)
+            * 更改他的颜色，改为蓝色
+            * 更改锚点(0.5, 0)，这是因为一般角色都让他脚着地   
+        2. 添加脚本
+            * nav_agent就是导航代理，给我们的player添加这个组件
+            * 其中组件里有个属性**Game Map**，我们把level1拖进去即可   
+            
+                ![](./images/创建玩家.jpg) 
+                
+            * 这样我们的角色就关联上了导航这个组件
+            * 导航代理的核心方法是**nav_to_map**  
+    7. 创建游戏脚本，来控制角色移动，这里就用鼠标控制，点哪走哪的快感~
+        1. 创建game_scene脚本，绑在Canvas下
+        2. 先编辑器绑定属性 
+        3. map绑定事件 
+        
+            ```
+            const nav_agent = require("nav_agent.js")
+            cc.Class({
+                extends: cc.Component,
+            
+                properties: {
+                    map: {
+                        type: cc.Node,
+                        default: null,
+                    },
+                    player_agent: {
+                        type: nav_agent,
+                        default: null,
+                    }
+                },
+            
+                // LIFE-CYCLE CALLBACKS:
+            
+                onLoad () {
+                    this.map.on(cc.Node.EventType.TOUCH_START, function(t){
+                        let w_pos = t.getLocation();
+                        this.player_agent.nav_to_map(w_pos);
+                    }.bind(this), this.map)
+                },
+            
+                start () {
+            
+                },
+            
+                update (dt) {},
+            });
+
+            ``` 
+        4. 然后在编辑器绑定前面写的那2个属性 
+        
+            ![](./images/编辑器绑定属性.jpg)              
+                
+        5. 然后就可以运行试效果了，我们可以把map的is_debug取消选中，这样就看不到点状图了      
          
                      
             
