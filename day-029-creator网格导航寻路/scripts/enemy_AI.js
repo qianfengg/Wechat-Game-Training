@@ -35,8 +35,8 @@ cc.Class({
         var target_pos = this.player_agent.node.getPosition();
         var now_pos = this.node.getPosition();
 
-        var dir = cc.pSub(target_pos, now_pos);
-        var len = cc.pLength(dir);
+        var dir = target_pos.sub(now_pos);
+        var len = dir.mag();
         if(len > this.search_R) { // 停止下来
             this.agent.stop_nav();
             return;
