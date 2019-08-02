@@ -91,7 +91,7 @@ cc.Class({
             }
         }
 
-        console.log(road_curve_path);
+        // console.log(road_curve_path);
 
         var one_road = [road_curve_path[0][0]];
 
@@ -116,7 +116,7 @@ cc.Class({
             }
         }
 
-        console.log(one_road);
+        // console.log(one_road);
         if (this.is_debug) {
             for (var i = 0; i < one_road.length; i ++) {
                 // this.draw_node.drawSegment(one_road[i],
