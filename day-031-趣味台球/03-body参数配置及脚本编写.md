@@ -30,7 +30,7 @@
                     type: cc.Node,
                     default: null,
                 },
-                min_dis: 20
+                min_dis: 20, //球杆消失的最短距离
             },
         
             // LIFE-CYCLE CALLBACKS:
@@ -39,23 +39,23 @@
         
             start () {
                 this.node.on(cc.Node.EventType.TOUCH_MOVE, (e) => {
-                    let w_pos = e.getLocation();
-                    let dst = this.node.parent.convertToNodeSpaceAR(w_pos);
-                    let src = this.node.getPosition();
-                    let dir = dst.sub(src);
-                    let len = dir.mag();
+                    let w_pos = e.getLocation(); //注意这里是世界坐标系
+                    let dst = this.node.parent.convertToNodeSpaceAR(w_pos); //这边要把球杆的位置转成母球的坐标系
+                    let src = this.node.getPosition(); //拿到母球白球的坐标
+                    let dir = dst.sub(src); //算出向量
+                    let len = dir.mag(); //向量的长度
                     if(len < this.min_dis){
-                        this.cue.active = false;
+                        this.cue.active = false; //球杆隐藏
                         return;
                     }
-                    this.cue.active = true;
-                    let r = Math.atan2(dir.y, dir.x);
-                    let degree = r * 180 / Math.PI;
-                    degree = 360 - degree + 180;
+                    this.cue.active = true; //把球杆显示出来
+                    let r = Math.atan2(dir.y, dir.x); //算出弧度制的角度
+                    let degree = r * 180 / Math.PI; //转换角度
+                    degree = 360 - degree + 180; //360-是因为和数学的角度保持一致，+180为了转个方向
                     this.cue.rotation = degree;
         
                     let cue_pos = dst;
-                    let cue_len_half = this.cue.width / 2;
+                    let cue_len_half = this.cue.width / 2; //因为球杆的锚点在球杆的正中间，所以下面要计算下
                     cue_pos.x += (cue_len_half * dir.x / len);
                     cue_pos.y += (cue_len_half * dir.y / len);
                     this.cue.setPosition(cue_pos);
