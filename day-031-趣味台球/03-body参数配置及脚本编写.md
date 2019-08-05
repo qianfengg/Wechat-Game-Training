@@ -16,11 +16,49 @@
     * 点击后远离白球出现杆，旋转可以调整角度，
         拉大距离可以增加力度，减小距离杆消失
 
-2. 所以我们在white_ball脚本里开始写代码 
-    * 编辑器绑定杆，以及设置个最小距离，即隐藏杆
+2. 脚本写代码 
+    * 在white_ball的脚本，编辑器绑定杆，以及设置个最小距离，即隐藏杆
     * touch move的时候是调整杆的位置
     * touch cancel的时候是发力打球
-    * 代码如下
+    * 我们还要在cue.js脚本里写个方法，完成杆打球的逻辑,需要给杆一个冲量
+        ```
+        cc.Class({
+            extends: cc.Component,
+        
+            properties: {
+                SHOOT_POWER: 18,
+            },
+        
+            // LIFE-CYCLE CALLBACKS:
+        
+            onLoad() {
+        
+            },
+        
+            start() {
+                this.body = this.node.getComponent(cc.RigidBody);
+            },
+        
+            update(dt) {
+        
+            },
+        
+            shoot_at(dst){
+                // console.log("shoot");
+                let src = this.node.getPosition();
+                let dir = dst.sub(src);
+                let len = dir.mag();
+                let half_len = this.node.width / 2;
+                let distance = len - half_len;
+                let power_x = distance * this.SHOOT_POWER * dir.x / len;
+                let power_y = distance * this.SHOOT_POWER * dir.y / len;
+                this.body.applyLinearImpulse(cc.v2(power_x, power_y), this.node.convertToWorldSpaceAR(cc.v2(0, 0)), true);
+            },
+        
+        });
+
+        ```
+    * 然后处理white_ball代码如下
         ```
         cc.Class({
             extends: cc.Component,
@@ -30,7 +68,7 @@
                     type: cc.Node,
                     default: null,
                 },
-                min_dis: 20, //球杆消失的最短距离
+                min_dis: 20
             },
         
             // LIFE-CYCLE CALLBACKS:
@@ -38,6 +76,7 @@
             onLoad () {},
         
             start () {
+                this.cue_inst = this.cue.getComponent("cue");
                 this.node.on(cc.Node.EventType.TOUCH_MOVE, (e) => {
                     let w_pos = e.getLocation(); //注意这里是世界坐标系
                     let dst = this.node.parent.convertToNodeSpaceAR(w_pos); //这边要把球杆的位置转成母球的坐标系
@@ -59,12 +98,21 @@
                     cue_pos.x += (cue_len_half * dir.x / len);
                     cue_pos.y += (cue_len_half * dir.y / len);
                     this.cue.setPosition(cue_pos);
-                }, this); 
+                }, this);
+        
+                this.node.on(cc.Node.EventType.TOUCH_END, () => {
+                    if(!this.cue.active) return;
+                    this.cue_inst.shoot_at(this.node.getPosition());
+                }, this)
+        
+                this.node.on(cc.Node.EventType.TOUCH_CANCEL, () => {
+                    if(!this.cue.active) return;
+                    this.cue_inst.shoot_at(this.node.getPosition());
+                }, this)
             },
         
             update (dt) {},
         });
-
         ```
         
         
