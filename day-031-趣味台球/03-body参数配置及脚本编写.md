@@ -44,14 +44,14 @@
             },
         
             shoot_at(dst){
-                // console.log("shoot");
-                let src = this.node.getPosition();
-                let dir = dst.sub(src);
-                let len = dir.mag();
+                // console.log("shoot"); 
+                let src = this.node.getPosition(); //球杆的位置，dst指的是白球的位置
+                let dir = dst.sub(src); // 计算出向量
+                let len = dir.mag();    // 计算出长度，注意这里的长度是杆的中心点到白球的距离
                 let half_len = this.node.width / 2;
-                let distance = len - half_len;
-                let power_x = distance * this.SHOOT_POWER * dir.x / len;
-                let power_y = distance * this.SHOOT_POWER * dir.y / len;
+                let distance = len - half_len; //所以这里要减去杆的一半，就代表着杆的头部到母球的距离
+                let power_x = distance * this.SHOOT_POWER * dir.x / len; //计算x方向的冲量
+                let power_y = distance * this.SHOOT_POWER * dir.y / len; //计算y方向的冲量
                 this.body.applyLinearImpulse(cc.v2(power_x, power_y), this.node.convertToWorldSpaceAR(cc.v2(0, 0)), true);
             },
         
@@ -102,12 +102,12 @@
         
                 this.node.on(cc.Node.EventType.TOUCH_END, () => {
                     if(!this.cue.active) return;
-                    this.cue_inst.shoot_at(this.node.getPosition());
+                    this.cue_inst.shoot_at(this.node.getPosition()); //球杆打白球，参数传的就是白球的位置
                 }, this)
         
                 this.node.on(cc.Node.EventType.TOUCH_CANCEL, () => {
                     if(!this.cue.active) return;
-                    this.cue_inst.shoot_at(this.node.getPosition());
+                    this.cue_inst.shoot_at(this.node.getPosition()); //球杆打白球，参数传的就是白球的位置
                 }, this)
             },
         
