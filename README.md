@@ -29,6 +29,8 @@ How to make a game? Let's learn it together!
 
     * 在我学习的过程中，有个大佬我非常喜欢，安利给大家一篇鸡汤文[点击此处看](https://www.zhangxinxu.com/life/2019/03/study/)
     
+    * 大佬在后续又写了篇文章[点击此处看](https://www.zhangxinxu.com/life/2019/07/company-ignore-fe/)，让我感同身受，加油，让自己变得更优秀
+    
     * 玩游戏和做游戏是两码事，两者都是我的兴趣爱好，
         希望广大朋友认清这点，并不是喜欢打游戏就会喜欢做游戏，
         真的想要做游戏需要做的是沉淀自己，脚踏实地的学习，
