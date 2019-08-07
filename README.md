@@ -38,6 +38,7 @@ How to make a game? Let's learn it together!
 4. 学习过程中，发现不同版本的creator的API有所不同，大家需要多看文档
     * 公司电脑的版本和家里电脑的版本不同，导致有些demo运行有问题
     * 比如说，node旋转角度，有个版本就是node.angle有的版本是node.rotation
+    * 比如说，老版本中用cc.p,新版本中用cc.v2
     * 所以大家要多练习，遇到问题多看文档 
     
 5. 每天的记录，这里方便大家查看做了链接
