@@ -8,7 +8,7 @@
     "i18n:MAIN_MENU.package.title/gen_navmesh/gen": {
       "message": "gen_navmesh:gen"
     },
-	"bycw/build_map" : {
+	"BuildMap/build_map" : {
 	  "message": "gen_navmesh:gen"
 	}
   },
