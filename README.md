@@ -75,6 +75,7 @@ How to make a game? Let's learn it together!
     * [day-029: 网格导航寻路](./day-029-creator网格导航寻路/00-creator网格导航寻路.md)    
     * [day-030: 动画编辑器编辑地图路径](./day-030-动画编辑器编辑地图路径/00-动画编辑器编辑地图路径.md)    
     * [day-031: 趣味台球](./day-031-趣味台球/00-趣味台球.md)    
+    * [day-032: 跳一跳](./day-032-跳一跳/00-跳一跳.md)    
     
     
     
