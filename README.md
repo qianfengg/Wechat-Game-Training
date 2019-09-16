@@ -46,41 +46,8 @@ How to make a game? Let's learn it together!
     
 5. 近期的情况   
     * 近期可能不会更新该项目，支持梦想前需要糊口，打算进修前端，达到高级的水准后在继续学习小游戏 
-    
+       
 6. 每天的记录，这里方便大家查看做了链接
-    * [day-001: 开始学习之旅](./day-001-开始学习之旅/00-开始学习之旅.md)    
-    * [day-002: 场景](./day-002-场景/00-cc.Node场景.md)    
-    * [day-003: 事件响应](./day-003-事件/00-cc.Node事件响应.md)    
-    * [day-004: 坐标空间](./day-004-坐标空间/00-cc.Node坐标空间.md)    
-    * [day-005: Action的使用](./day-005-Action/00-Action使用.md)    
-    * [day-006: Component的使用](./day-006-Component/00-cc.Component使用.md)    
-    * [day-007: Sprite的使用](./day-007-Sprite/00-cc.Sprite使用.md)    
-    * [day-008: Button的使用](./day-008-Button/00-cc.Button使用.md)    
-    * [day-009: Label的使用](./day-009-Label/00-cc.Label组件使用.md)    
-    * [day-010: AudioSource的使用](./day-010-AudioSource/00-AudioSource组件使用.md)    
-    * [day-011: 动画编辑器](./day-011-动画编辑器/00-动画编辑器.md)    
-    * [day-012: 骨骼动画](./day-012-骨骼动画/00-骨骼动画组件使用.md)    
-    * [day-013: 预制体,Mask,Layout,ScrollView](./day-013-预制体,Mask,Layout,ScrollView/00-本章目录.md)    
-    * [day-014: Loader的使用](./day-014-Loader/00-cc.Loader使用.md)    
-    * [day-015: Widget与屏幕适配](./day-015-Widget与屏幕适配/00-cc.Widget与屏幕适配.md)    
-    * [day-016: 碰撞检测系统](./day-016-碰撞检测系统/00-本章目录.md)    
-    * [day-017: 帧动画](./day-017-帧动画/00-本章目录.md)    
-    * [day-018: TexturePacker图集打包](./day-018-TexturePacker图集打包/00-TexturePacker图集打包.md)    
-    * [day-019: 高级UI的实现](./day-019-高级UI的实现/00-高级UI的实现.md)    
-    * [day-020: 物理引擎基本配置](./day-020-物理引擎基本配置/00-物理引擎基本配置.md)    
-    * [day-021: 物理引擎碰撞检测](./day-021-物理引擎碰撞检测/00-物理引擎碰撞检测.md)    
-    * [day-022: 物理引擎官方案例与Camera组件](./day-022-物理引擎官方案例与Camera组件/00-本章目录.md)    
-    * [day-023: 滚动列表动态加载数据](./day-023-滚动列表动态加载数据/00-本章目录.md)    
-    * [day-024: 项目打包发布](./day-024-项目打包发布/00-本章目录.md)    
-    * [day-025: Director与资源加载策略](./day-025-Director与资源加载策略/00-本章目录.md)    
-    * [day-026: 本地文件读写](./day-026-本地文件读写/00-本章目录.md)    
-    * [day-027: WebSocket与socket.io](./day-027-Websocket与socket.io/00-本章目录.md)    
-    * [day-028: HttpClient](./day-028-HttpClient/00-本章目录.md)    
-    * [day-029: 网格导航寻路](./day-029-creator网格导航寻路/00-creator网格导航寻路.md)    
-    * [day-030: 动画编辑器编辑地图路径](./day-030-动画编辑器编辑地图路径/00-动画编辑器编辑地图路径.md)    
-    * [day-031: 趣味台球](./day-031-趣味台球/00-趣味台球.md)    
-    * [day-032: 跳一跳](./day-032-跳一跳/00-跳一跳.md)    
-5. 每天的记录，这里方便大家查看做了链接
     * 基础篇
     
         * Day01-15
